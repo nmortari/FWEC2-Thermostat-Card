@@ -94,3 +94,10 @@
 ## 0.5.3
 - Keep the target-temperature popup open during Home Assistant state updates.
 - Refresh the card with accumulated state changes after the popup closes.
+
+## 0.6.0
+- Replace the informational tiles with plain inline room, humidity, active-setpoint, and user-setpoint values.
+- Keep only Cooling target and Heating target as rounded clickable tiles.
+- Replace the temperature-only sparkline with a shared 24-hour temperature and humidity graph.
+- Use separate graph colors and a compact legend.
+- Remove the target-selection instructional text.
