@@ -27,3 +27,8 @@
 ## 0.3.2
 - Make the HA control button reliable when clicking its icon, label, or background.
 - Use Home Assistant's generic toggle service for the configured control entity.
+
+## 0.3.3
+- Bind the HA control button directly after every card render.
+- Explicitly call switch.turn_on and switch.turn_off.
+- Display Home Assistant service-call errors inside the card.
