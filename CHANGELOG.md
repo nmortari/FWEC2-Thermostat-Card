@@ -90,3 +90,7 @@
 ## 0.5.2
 - Correct the center target button dimensions so the full temperature value is clickable.
 - Supersedes version 0.5.1.
+
+## 0.5.3
+- Keep the target-temperature popup open during Home Assistant state updates.
+- Refresh the card with accumulated state changes after the popup closes.
