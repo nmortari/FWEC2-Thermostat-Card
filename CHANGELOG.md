@@ -150,3 +150,7 @@
 - Keep the Heating target number orange at all times.
 - Return target tile backgrounds, borders, labels, and icons to neutral styling.
 - Dim only labels and icons when HA Control is disabled.
+
+## 0.7.9
+- Restore full blue and orange target-tile illumination while HA Control is enabled.
+- Continue showing only the colored target numbers while HA Control is disabled.
