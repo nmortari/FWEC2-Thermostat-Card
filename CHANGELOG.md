@@ -113,3 +113,9 @@
 - Remove the main-section plus and minus controls.
 - Open the target popup directly when Cooling target or Heating target is clicked.
 - Add interval-aware plus and minus controls inside the target popup.
+
+## 0.7.1
+- Remove all Cooling and Heating target highlighting while HA Control is disabled.
+- Highlight the active Cooling target in blue.
+- Highlight the active Heating target in red.
+- Keep focus on the popup number field when using plus or minus so mobile keyboards remain open.
