@@ -86,3 +86,7 @@
 - Snap typed values to the configured temperature interval.
 - Make plus and minus move to the next valid interval boundary, even if the current value is off-step.
 - Respect the selected number entity's minimum and maximum.
+
+## 0.5.2
+- Correct the center target button dimensions so the full temperature value is clickable.
+- Supersedes version 0.5.1.
