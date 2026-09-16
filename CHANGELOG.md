@@ -144,3 +144,9 @@
 ## 0.7.7
 - Increase disabled Cooling and Heating target visibility to 62 percent opacity.
 - Keep both targets visibly disabled while making their labels and temperatures easier to read.
+
+## 0.7.8
+- Keep the Cooling target number blue at all times.
+- Keep the Heating target number orange at all times.
+- Return target tile backgrounds, borders, labels, and icons to neutral styling.
+- Dim only labels and icons when HA Control is disabled.
