@@ -140,3 +140,7 @@
 ## 0.7.6
 - Increase contrast and size for section headings and value labels.
 - Improve readability for room, humidity, setpoint, target, fan, and system-status labels.
+
+## 0.7.7
+- Increase disabled Cooling and Heating target visibility to 62 percent opacity.
+- Keep both targets visibly disabled while making their labels and temperatures easier to read.
