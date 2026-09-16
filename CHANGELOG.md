@@ -79,3 +79,10 @@
 - Add an optional 24-hour room-temperature sparkline using Home Assistant recorder history.
 - Color the graph for heating, cooling, or off state.
 - Remove the separate Current readings section.
+
+## 0.5.1
+- Open a styled numeric popup when the large target value is clicked.
+- Submit typed values with Set or Enter and cancel with Cancel or Escape.
+- Snap typed values to the configured temperature interval.
+- Make plus and minus move to the next valid interval boundary, even if the current value is off-step.
+- Respect the selected number entity's minimum and maximum.
