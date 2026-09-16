@@ -124,3 +124,7 @@
 - Restore the original orange heating color.
 - Illuminate Cooling blue and Heating orange simultaneously whenever HA Control is enabled.
 - Retain a subtle stronger outline on the target currently selected for editing.
+
+## 0.7.3
+- Remove the persistent selected-target outline.
+- Keep Cooling blue and Heating orange with equal visual weight while HA Control is enabled.
