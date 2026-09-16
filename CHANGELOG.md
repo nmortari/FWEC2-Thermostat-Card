@@ -105,3 +105,11 @@
 ## 0.6.1
 - Correct optional-value cleanup so an empty summary row cannot remove the main target control.
 - Supersedes version 0.6.0.
+
+## 0.7.0
+- Move the shared temperature/humidity graph to the bottom of the card.
+- Make room temperature the large read-only value in the upper section.
+- Evenly distribute humidity, active setpoint, and user setpoint beneath room temperature.
+- Remove the main-section plus and minus controls.
+- Open the target popup directly when Cooling target or Heating target is clicked.
+- Add interval-aware plus and minus controls inside the target popup.
