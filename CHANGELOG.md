@@ -57,3 +57,8 @@
 - Remove the mode icon and mode/fan subtitle from the header.
 - Remove the disabled-control informational notice.
 - Give longer card titles more available width.
+
+## 0.4.4
+- Increase the card-title font from 15px to 17px.
+- Bind every mode, fan, temperature, and HA-control button directly after rendering.
+- Retain visible service-call error reporting for all controls.
