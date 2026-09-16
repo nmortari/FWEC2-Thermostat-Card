@@ -101,3 +101,7 @@
 - Replace the temperature-only sparkline with a shared 24-hour temperature and humidity graph.
 - Use separate graph colors and a compact legend.
 - Remove the target-selection instructional text.
+
+## 0.6.1
+- Correct optional-value cleanup so an empty summary row cannot remove the main target control.
+- Supersedes version 0.6.0.
