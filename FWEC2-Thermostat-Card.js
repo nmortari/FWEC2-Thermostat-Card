@@ -1,4 +1,4 @@
-const V="0.3.0";
+const V="0.3.1";
 class FWECard extends HTMLElement{
 constructor(){super();this.attachShadow({mode:"open"});this.shadowRoot.onclick=e=>this.click(e)}
 static getStubConfig(){return{title:"FWEC2 Thermostat",temperature_step:.5,entities:{}}}
@@ -23,7 +23,7 @@ static getConfigForm(){
  };
 }
 setConfig(c){if(!c?.entities)throw Error("entities: is required");this.c={title:"FWEC2 Thermostat",temperature_step:.5,mode_options:{off:"Off",heating:"Heating",cooling:"Cooling"},fan_options:{automatic:"Automatic",low:"Low",medium:"Medium",high:"High"},...c,mode_options:{off:"Off",heating:"Heating",cooling:"Cooling",...c.mode_options},fan_options:{automatic:"Automatic",low:"Low",medium:"Medium",high:"High",...c.fan_options}}}
-set hass(h){this.h=h;this.render()}getCardSize(){return 8}getGridOptions(){return{columns:12,rows:8,min_columns:6}}
+set hass(h){this.h=h;this.render()}getCardSize(){return 14}getGridOptions(){return{columns:12,min_columns:6}}
 id(k){return this.c.entities[k]}e(k){return this.h.states[this.id(k)]}n(v){return String(v??"").toLowerCase()}ctl(){return this.e("ha_control")?.state==="on"}mode(){let s=this.n(this.e("mode")?.state),o=this.c.mode_options;return s===this.n(o.heating)?"heating":s===this.n(o.cooling)?"cooling":"off"}key(){return this.mode()==="heating"?"heating_setpoint":this.mode()==="cooling"?"cooling_setpoint":null}
 fmt(k,u=""){let e=this.e(k);if(!e||["unknown","unavailable"].includes(e.state))return"—";let x=parseFloat(e.state),v=Number.isFinite(x)?x.toFixed(1).replace(".0",""):e.state,z=e.attributes.unit_of_measurement||u;return z?v+" "+z:v}
 esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")}
@@ -39,6 +39,7 @@ this.shadowRoot.innerHTML=`<style>
 if(!customElements.get("fwec2-thermostat-card"))customElements.define("fwec2-thermostat-card",FWECard);
 window.customCards=window.customCards||[];window.customCards.push({type:"fwec2-thermostat-card",name:"FWEC2 Thermostat Card",description:"Daikin FWEC2 control card",preview:true});
 console.info("FWEC2 Thermostat Card v"+V);
+
 
 
 

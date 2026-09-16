@@ -19,3 +19,7 @@
 - Add domain-filtered selectors for every FWEC2 entity.
 - Add visual fields for the card title and temperature adjustment step.
 - Keep YAML configuration fully supported.
+
+## 0.3.1
+- Let Sections dashboards calculate the card's natural height.
+- Increase the masonry size estimate to prevent following cards from overlapping.
