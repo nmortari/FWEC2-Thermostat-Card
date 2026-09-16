@@ -32,3 +32,7 @@
 - Bind the HA control button directly after every card render.
 - Explicitly call switch.turn_on and switch.turn_off.
 - Display Home Assistant service-call errors inside the card.
+
+## 0.3.4
+- Correct the diagnostic control-button build.
+- Supersedes version 0.3.3.
