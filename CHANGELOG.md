@@ -72,3 +72,10 @@
 - Always highlight the selected fan command rather than the current physical fan output.
 - Keep immediate optimistic feedback for Home Assistant fan selections.
 - Continue treating Actual Fan Speed as an optional informational reading only.
+
+## 0.5.0
+- Move room temperature, humidity, active setpoint, user setpoint, cooling target, and heating target into the upper climate summary.
+- Make Cooling target and Heating target selectable while sharing one large value and one pair of adjustment buttons.
+- Add an optional 24-hour room-temperature sparkline using Home Assistant recorder history.
+- Color the graph for heating, cooling, or off state.
+- Remove the separate Current readings section.
