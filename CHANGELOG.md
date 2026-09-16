@@ -119,3 +119,8 @@
 - Highlight the active Cooling target in blue.
 - Highlight the active Heating target in red.
 - Keep focus on the popup number field when using plus or minus so mobile keyboards remain open.
+
+## 0.7.2
+- Restore the original orange heating color.
+- Illuminate Cooling blue and Heating orange simultaneously whenever HA Control is enabled.
+- Retain a subtle stronger outline on the target currently selected for editing.
