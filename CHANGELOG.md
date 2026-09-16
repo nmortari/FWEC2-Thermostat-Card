@@ -128,3 +128,7 @@
 ## 0.7.3
 - Remove the persistent selected-target outline.
 - Keep Cooling blue and Heating orange with equal visual weight while HA Control is enabled.
+
+## 0.7.4
+- Prevent the target-dialog title from being highlighted or copied accidentally.
+- Keep the numeric target field selectable and editable.
