@@ -1,4 +1,4 @@
-const V="0.3.1";
+const V="0.3.2";
 class FWECard extends HTMLElement{
 constructor(){super();this.attachShadow({mode:"open"});this.shadowRoot.onclick=e=>this.click(e)}
 static getStubConfig(){return{title:"FWEC2 Thermostat",temperature_step:.5,entities:{}}}
@@ -28,7 +28,7 @@ id(k){return this.c.entities[k]}e(k){return this.h.states[this.id(k)]}n(v){retur
 fmt(k,u=""){let e=this.e(k);if(!e||["unknown","unavailable"].includes(e.state))return"—";let x=parseFloat(e.state),v=Number.isFinite(x)?x.toFixed(1).replace(".0",""):e.state,z=e.attributes.unit_of_measurement||u;return z?v+" "+z:v}
 esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")}
 call(d,s,x){this.h.callService(d,s,x)}
-click(e){let b=e.target.closest("button[data-a]");if(!b||b.disabled)return;if(b.dataset.a==="ctl")return this.call("switch",this.ctl()?"turn_off":"turn_on",{entity_id:this.id("ha_control")});if(!this.ctl())return;if(["mode","fan"].includes(b.dataset.a)){let k=b.dataset.a==="mode"?"mode":"fan_command";return this.call("select","select_option",{entity_id:this.id(k),option:this.c[b.dataset.a+"_options"][b.dataset.v]})}let k=this.key(),x=this.e(k),v=parseFloat(x?.state);if(k&&Number.isFinite(v)){let step=Number(this.c.temperature_step)||.5,min=Number(x.attributes.min),max=Number(x.attributes.max);v+=Number(b.dataset.v)*step;if(Number.isFinite(min))v=Math.max(min,v);if(Number.isFinite(max))v=Math.min(max,v);this.call("number","set_value",{entity_id:this.id(k),value:v})}}
+click(e){let b=e.composedPath().find(x=>x?.dataset?.a);if(!b||b.disabled)return;if(b.dataset.a==="ctl"){let id=this.id("ha_control");if(id)return this.call("homeassistant","toggle",{entity_id:id});return}if(!this.ctl())return;if(["mode","fan"].includes(b.dataset.a)){let k=b.dataset.a==="mode"?"mode":"fan_command";return this.call("select","select_option",{entity_id:this.id(k),option:this.c[b.dataset.a+"_options"][b.dataset.v]})}let k=this.key(),x=this.e(k),v=parseFloat(x?.state);if(k&&Number.isFinite(v)){let step=Number(this.c.temperature_step)||.5,min=Number(x.attributes.min),max=Number(x.attributes.max);v+=Number(b.dataset.v)*step;if(Number.isFinite(min))v=Math.max(min,v);if(Number.isFinite(max))v=Math.min(max,v);this.call("number","set_value",{entity_id:this.id(k),value:v})}}
 seg(type,opts,state,disabled){let icons=type==="mode"?{off:"mdi:power",heating:"mdi:fire",cooling:"mdi:snowflake"}:{automatic:"mdi:fan-auto",low:"mdi:fan-speed-1",medium:"mdi:fan-speed-2",high:"mdi:fan-speed-3"};return Object.entries(opts).map(([k,v])=>`<button class="${this.n(state)===this.n(v)?"on":""}" data-a="${type}" data-v="${k}" ${disabled?"disabled":""}><ha-icon icon="${icons[k]}"></ha-icon><small>${v}</small></button>`).join("")}
 metric(i,l,v){return`<div class="metric"><ha-icon icon="${i}"></ha-icon><span><small>${l}</small><b>${this.esc(v)}</b></span></div>`}
 status(k,i,l,alarm=false){let e=this.e(k),on=e?.state==="on";return`<div class="status"><span><ha-icon icon="${i}"></ha-icon>${l}</span><b class="${on?(alarm?"bad":"good"):""}">${!e?"—":on?(alarm?"Alarm":"Active"):(alarm?"Clear":"Inactive")}</b></div>`}
@@ -39,6 +39,7 @@ this.shadowRoot.innerHTML=`<style>
 if(!customElements.get("fwec2-thermostat-card"))customElements.define("fwec2-thermostat-card",FWECard);
 window.customCards=window.customCards||[];window.customCards.push({type:"fwec2-thermostat-card",name:"FWEC2 Thermostat Card",description:"Daikin FWEC2 control card",preview:true});
 console.info("FWEC2 Thermostat Card v"+V);
+
 
 
 

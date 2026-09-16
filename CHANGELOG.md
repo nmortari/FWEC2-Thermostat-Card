@@ -23,3 +23,7 @@
 ## 0.3.1
 - Let Sections dashboards calculate the card's natural height.
 - Increase the masonry size estimate to prevent following cards from overlapping.
+
+## 0.3.2
+- Make the HA control button reliable when clicking its icon, label, or background.
+- Use Home Assistant's generic toggle service for the configured control entity.
