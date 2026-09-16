@@ -36,3 +36,9 @@
 ## 0.3.4
 - Correct the diagnostic control-button build.
 - Supersedes version 0.3.3.
+
+## 0.4.0
+- Expand the HA control button to the right third of the card header.
+- Highlight enabled HA control in yellow.
+- Preserve active mode highlighting while HA control is disabled.
+- Show actual fan-speed highlighting while HA control is disabled.
