@@ -13,3 +13,9 @@
 ## 0.2.2
 - Show heating and cooling target temperatures simultaneously.
 - Retain the mode-aware large target control and all live FWEC2 readings.
+
+## 0.3.0
+- Add a native Home Assistant visual card editor.
+- Add domain-filtered selectors for every FWEC2 entity.
+- Add visual fields for the card title and temperature adjustment step.
+- Keep YAML configuration fully supported.

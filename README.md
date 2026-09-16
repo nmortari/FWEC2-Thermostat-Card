@@ -46,3 +46,7 @@ temperature_step: 0.5
 ```
 
 Readings remain live while HA control is disabled. Commands are intentionally locked until HA control is enabled.
+
+## Visual editor
+
+Version 0.3.0 and newer supports Home Assistant's graphical card editor. Add or edit the card from the dashboard UI, expand **FWEC2 entities**, and select each entity from the filtered dropdowns. YAML remains available for advanced configuration.

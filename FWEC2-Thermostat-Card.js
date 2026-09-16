@@ -1,6 +1,27 @@
-const V="0.2.2";
+const V="0.3.0";
 class FWECard extends HTMLElement{
 constructor(){super();this.attachShadow({mode:"open"});this.shadowRoot.onclick=e=>this.click(e)}
+static getStubConfig(){return{title:"FWEC2 Thermostat",temperature_step:.5,entities:{}}}
+static getConfigForm(){
+ const labels={title:"Card title",temperature_step:"Temperature adjustment step",ha_control:"Home Assistant control",mode:"Thermostat state",fan_command:"Fan control",heating_setpoint:"Heating target",cooling_setpoint:"Cooling target",room_temperature:"Room temperature",humidity:"Humidity",active_setpoint:"Active setpoint",user_setpoint:"User setpoint",actual_fan:"Actual fan speed",economy:"Economy active",dehumidification:"Dehumidification active",cooling_output:"Cooling output",heating_output:"Heating output",alarm:"Alarm"};
+ const entity=(name,domain,required=false)=>({name,required,selector:{entity:{domain}}});
+ return{
+  schema:[
+   {name:"title",selector:{text:{}}},
+   {name:"temperature_step",selector:{number:{min:.1,max:5,step:.1,mode:"box",unit_of_measurement:"°C"}}},
+   {type:"expandable",name:"entities",title:"FWEC2 entities",flatten:false,schema:[
+    entity("ha_control","switch",true),entity("mode","select",true),entity("fan_command","select",true),
+    entity("heating_setpoint","number",true),entity("cooling_setpoint","number",true),
+    entity("room_temperature","sensor",true),entity("humidity","sensor",true),
+    entity("active_setpoint","sensor"),entity("user_setpoint","sensor"),entity("actual_fan","sensor"),
+    entity("economy","binary_sensor"),entity("dehumidification","binary_sensor"),
+    entity("cooling_output","binary_sensor"),entity("heating_output","binary_sensor"),entity("alarm","binary_sensor")
+   ]}
+  ],
+  computeLabel:s=>labels[s.name],
+  computeHelper:s=>s.name==="entities"?"Choose the entities created by your FWEC2 ESPHome device.":undefined
+ };
+}
 setConfig(c){if(!c?.entities)throw Error("entities: is required");this.c={title:"FWEC2 Thermostat",temperature_step:.5,mode_options:{off:"Off",heating:"Heating",cooling:"Cooling"},fan_options:{automatic:"Automatic",low:"Low",medium:"Medium",high:"High"},...c,mode_options:{off:"Off",heating:"Heating",cooling:"Cooling",...c.mode_options},fan_options:{automatic:"Automatic",low:"Low",medium:"Medium",high:"High",...c.fan_options}}}
 set hass(h){this.h=h;this.render()}getCardSize(){return 8}getGridOptions(){return{columns:12,rows:8,min_columns:6}}
 id(k){return this.c.entities[k]}e(k){return this.h.states[this.id(k)]}n(v){return String(v??"").toLowerCase()}ctl(){return this.e("ha_control")?.state==="on"}mode(){let s=this.n(this.e("mode")?.state),o=this.c.mode_options;return s===this.n(o.heating)?"heating":s===this.n(o.cooling)?"cooling":"off"}key(){return this.mode()==="heating"?"heating_setpoint":this.mode()==="cooling"?"cooling_setpoint":null}
@@ -18,5 +39,6 @@ this.shadowRoot.innerHTML=`<style>
 if(!customElements.get("fwec2-thermostat-card"))customElements.define("fwec2-thermostat-card",FWECard);
 window.customCards=window.customCards||[];window.customCards.push({type:"fwec2-thermostat-card",name:"FWEC2 Thermostat Card",description:"Daikin FWEC2 control card",preview:true});
 console.info("FWEC2 Thermostat Card v"+V);
+
 
 
