@@ -62,3 +62,8 @@
 - Increase the card-title font from 15px to 17px.
 - Bind every mode, fan, temperature, and HA-control button directly after rendering.
 - Retain visible service-call error reporting for all controls.
+
+## 0.4.5
+- Highlight a requested fan mode immediately instead of waiting for the Modbus polling round trip.
+- Reconcile the optimistic fan selection with the confirmed ESPHome entity state.
+- Clear an unconfirmed selection after 12 seconds or immediately on a service error.
