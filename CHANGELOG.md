@@ -42,3 +42,7 @@
 - Highlight enabled HA control in yellow.
 - Preserve active mode highlighting while HA control is disabled.
 - Show actual fan-speed highlighting while HA control is disabled.
+
+## 0.4.1
+- Remove a stale responsive CSS fragment that affected desktop layout.
+- Preserve the new one-third HA-control button and live status highlighting.
