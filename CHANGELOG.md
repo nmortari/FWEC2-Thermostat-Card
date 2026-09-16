@@ -160,3 +160,9 @@
 - Highlight Off, Heating, or Cooling immediately after a mode command.
 - Reconcile optimistic mode feedback with the confirmed ESPHome state.
 - Clear unconfirmed mode feedback after 12 seconds or immediately on service failure.
+
+## 0.8.1
+- Prevent frequent ESPHome state refreshes from replacing a button between pointer-down and click.
+- Remove the obsolete delegated click handler.
+- Preserve direct click handling for every card and dialog button.
+- Add pointer-cancel and safety-timeout recovery.
