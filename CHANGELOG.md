@@ -67,3 +67,8 @@
 - Highlight a requested fan mode immediately instead of waiting for the Modbus polling round trip.
 - Reconcile the optimistic fan selection with the confirmed ESPHome entity state.
 - Clear an unconfirmed selection after 12 seconds or immediately on a service error.
+
+## 0.4.6
+- Always highlight the selected fan command rather than the current physical fan output.
+- Keep immediate optimistic feedback for Home Assistant fan selections.
+- Continue treating Actual Fan Speed as an optional informational reading only.
