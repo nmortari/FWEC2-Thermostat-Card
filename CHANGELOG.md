@@ -46,3 +46,8 @@
 ## 0.4.1
 - Remove a stale responsive CSS fragment that affected desktop layout.
 - Preserve the new one-third HA-control button and live status highlighting.
+
+## 0.4.2
+- Hide unassigned reading and status entities from the card.
+- Hide an entire readings or status section when none of its entities are assigned.
+- Make room temperature and humidity optional in the visual editor.
