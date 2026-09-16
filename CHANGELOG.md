@@ -132,3 +132,7 @@
 ## 0.7.4
 - Prevent the target-dialog title from being highlighted or copied accidentally.
 - Keep the numeric target field selectable and editable.
+
+## 0.7.5
+- Increase the popup Cancel and Set buttons to a 44px minimum height.
+- Add more vertical and horizontal button padding.
