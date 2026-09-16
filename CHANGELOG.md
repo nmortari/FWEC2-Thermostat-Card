@@ -154,3 +154,9 @@
 ## 0.7.9
 - Restore full blue and orange target-tile illumination while HA Control is enabled.
 - Continue showing only the colored target numbers while HA Control is disabled.
+
+## 0.8.0
+- Change the humidity-history line from teal to violet for clear contrast in cooling mode.
+- Highlight Off, Heating, or Cooling immediately after a mode command.
+- Reconcile optimistic mode feedback with the confirmed ESPHome state.
+- Clear unconfirmed mode feedback after 12 seconds or immediately on service failure.
