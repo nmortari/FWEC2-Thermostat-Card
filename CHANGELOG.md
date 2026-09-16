@@ -51,3 +51,9 @@
 - Hide unassigned reading and status entities from the card.
 - Hide an entire readings or status section when none of its entities are assigned.
 - Make room temperature and humidity optional in the visual editor.
+
+## 0.4.3
+- Simplify the header to show only the card title and HA-control button.
+- Remove the mode icon and mode/fan subtitle from the header.
+- Remove the disabled-control informational notice.
+- Give longer card titles more available width.
