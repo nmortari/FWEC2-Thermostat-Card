@@ -136,3 +136,7 @@
 ## 0.7.5
 - Increase the popup Cancel and Set buttons to a 44px minimum height.
 - Add more vertical and horizontal button padding.
+
+## 0.7.6
+- Increase contrast and size for section headings and value labels.
+- Improve readability for room, humidity, setpoint, target, fan, and system-status labels.
